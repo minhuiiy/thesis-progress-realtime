@@ -3,8 +3,6 @@ package com.MMT.thesis_progress_realtime.domain;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-import javax.management.relation.Role;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -44,4 +42,62 @@ public class User {
         inverseJoinColumns = @JoinColumn(name="role_id")
     )
     private Set<Role> roles;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    /* ================= SETTERS ================= */
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 }
